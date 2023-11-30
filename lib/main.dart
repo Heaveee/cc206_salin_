@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'features/login.dart';
+import 'features/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,3 +17,4 @@ class MyApp extends StatelessWidget{
     )
   }
 }
+

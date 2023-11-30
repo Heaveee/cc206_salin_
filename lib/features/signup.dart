@@ -10,8 +10,7 @@ class SignUpApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.yellow,
-        colorScheme: ColorScheme.fromSwatch()
-            .copyWith(secondary: Colors.red), // Set accent color to red
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
       ),
       home: SignUpForm(),
     );
@@ -32,7 +31,7 @@ class SignUpForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/salin_logo.png', // Replace with the actual path to your logo
+                'assets/salin_logo.png',
                 width: 100,
                 height: 100,
               ),
@@ -59,13 +58,11 @@ class SignUpForm extends StatelessWidget {
                   // if din makadto ang button
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Colors.red), // Set the button color to red
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
                 ),
                 child: Text("Sign Up",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 252, 252,
-                            252))), // Set the button text color to yellow
+                    style:
+                        TextStyle(color: Color.fromARGB(255, 252, 252, 252))),
               ),
             ],
           ),

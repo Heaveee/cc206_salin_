@@ -31,7 +31,7 @@ class SalinLoginForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/salin_logo.png', // Replace with the actual path to your logo
+                'assets/salin_logo.png',
                 width: 100,
                 height: 100,
               ),
