@@ -12,8 +12,15 @@ class Onboarding1 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Salin Picture 1"),
-            Text("Tagline 1"),
+            Image.asset(
+              'assets/salin_logo.png',
+              width: 300,
+              height: 300,
+            ),
+            Text(
+              "ahhh ha ha itype nyo, at isasalin ko uh huhhuh huhhuhh",
+              style: TextStyle(fontSize: 18, fontStyle: FontStyle.normal),
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
@@ -25,6 +32,10 @@ class Onboarding1 extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => Onboarding2()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                    textStyle: TextStyle(fontSize: 18),
+                  ),
                   child: Text("Next"),
                 ),
               ),

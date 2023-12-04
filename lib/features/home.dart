@@ -22,9 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("SALIN"),
-      ),
       body: Stack(
         children: [
           _screens[_currentIndex],
@@ -91,11 +88,103 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class HomeContent extends StatelessWidget {
+class HomeContent extends StatefulWidget {
+  @override
+  _HomeContentState createState() => _HomeContentState();
+}
+
+class _HomeContentState extends State<HomeContent> {
+  TextEditingController _textEditingController = TextEditingController();
+  String _translatedText = '';
+  String _selectedLanguage = 'English'; // Default language
+
+  List<String> _languages = [
+    'English',
+    'Spanish',
+    'French',
+    'German',
+    'Chinese',
+    'Tagalog',
+    'Cebuano',
+    'Ilocano',
+    'Waray',
+    'Bikolano',
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Home Screen Content"),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                TextField(
+                  controller: _textEditingController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter text to translate',
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                DropdownButton<String>(
+                  value: _selectedLanguage,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedLanguage = value!;
+                    });
+                  },
+                  items: _languages.map((language) {
+                    return DropdownMenuItem(
+                      value: language,
+                      child: Text(language),
+                    );
+                  }).toList(),
+                ),
+                SizedBox(height: 16.0),
+                ElevatedButton(
+                  onPressed: () {
+                    // Here you would call a translation API
+                    // For example purposes, we'll use a simple hardcoded translation
+                    setState(() {
+                      _translatedText =
+                          'Translated to $_selectedLanguage: ${_textEditingController.text}';
+                    });
+                  },
+                  child: Text("Translate"),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+              height:
+                  32.0), // Adjust the spacing between the text field and the translation panel
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  'Translation:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8.0),
+                Text(
+                  _translatedText,
+                  style: TextStyle(fontSize: 16),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

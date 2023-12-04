@@ -6,57 +6,140 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Salin Login"),
-      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/salin_logo.png',
-              width: 100,
-              height: 100,
-            ),
-            Text(
-              "Log In to Salin",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 16.0),
-            TextField(
-              decoration: InputDecoration(labelText: "Username"),
-            ),
-            SizedBox(height: 16.0),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(labelText: "Password"),
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                // Handle login
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                );
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red),
+        child: Container(
+          width: 375,
+          height: 812,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/salin_logo.png',
+                width: 169,
+                height: 186,
               ),
-              child: Text("Log In", style: TextStyle(color: Colors.white)),
-            ),
-            SizedBox(height: 16.0),
-            TextButton(
-              onPressed: () {
-                // Navigate to sign-up screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignUpForm()),
-                );
-              },
-              child: Text("Sign Up"),
-            ),
-          ],
+              SizedBox(height: 20),
+              Container(
+                width: 310,
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Username",
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: 310,
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  //  login
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                ),
+                child: Text("Log In", style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 20),
+              Column(
+                children: [
+                  Text(
+                    "Don’t have an account yet? ",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // pakadto to signup screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpForm()),
+                      );
+                    },
+                    child: Text(
+                      "Sign up here",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.telegram, size: 30, color: Colors.blue),
+                    onPressed: () {
+                      // Handle Google login
+                    },
+                  ),
+                  SizedBox(width: 20),
+                  IconButton(
+                    icon: Icon(Icons.facebook, size: 30, color: Colors.blue),
+                    onPressed: () {
+                      // Handle Facebook login
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Text(
+                "or continue with",
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  // Handle forgot password
+                },
+                child: Text(
+                  "forgot password?",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

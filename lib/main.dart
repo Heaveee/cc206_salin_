@@ -1,3 +1,5 @@
+import 'package:cc206_salin_/features/home.dart';
+import 'package:cc206_salin_/features/login.dart';
 import 'package:flutter/material.dart';
 import 'onboarding/onboarding.dart';
 
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Salin Login',
       debugShowCheckedModeBanner: false,
-      home: Onboarding1(),
+      home: LoginScreen(),
       theme: ThemeData(
         primaryColor: Colors.yellow,
         colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
