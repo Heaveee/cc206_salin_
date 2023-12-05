@@ -100,11 +100,9 @@ class _HomeContentState extends State<HomeContent> {
 
   List<String> _languages = [
     'English',
-    'Spanish',
-    'French',
-    'German',
-    'Chinese',
     'Tagalog',
+    'Kapampangan',
+    'Chavacano',
     'Cebuano',
     'Ilocano',
     'Waray',

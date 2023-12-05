@@ -45,7 +45,7 @@ class ProfileContent extends StatelessWidget {
                     ),
                   ),
                   subtitle: Text(
-                    "John Doe",
+                    "Victoria Secret",
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -62,7 +62,7 @@ class ProfileContent extends StatelessWidget {
                     ),
                   ),
                   subtitle: Text(
-                    "January 1, 1990",
+                    "January 2, 1995",
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -79,7 +79,7 @@ class ProfileContent extends StatelessWidget {
                     ),
                   ),
                   subtitle: Text(
-                    "john.doe@example.com",
+                    "victoria.secret@gmail.com",
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,

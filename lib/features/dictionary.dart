@@ -8,12 +8,12 @@ class DictionaryScreen extends StatefulWidget {
 class _DictionaryScreenState extends State<DictionaryScreen> {
   TextEditingController _searchController = TextEditingController();
   List<DictionaryEntry> _allEntries = [
-    DictionaryEntry("Flutter",
-        "A UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase."),
-    DictionaryEntry("Dart",
-        "A programming language optimized for building mobile, desktop, server, and web applications."),
-    DictionaryEntry(
-        "Widget", "The basic building block of the user interface in Flutter."),
+    DictionaryEntry("Lakat",
+        "In Hiligaynon, which is spoken in the Western Visayas region of the Philippines, the word lakat generally means to walk or walking. It is a verb that describes the action of moving on foot."),
+    DictionaryEntry("Sabot",
+        "In Cebuano, the word sabot means understand or agreement. It is commonly used to convey the idea of comprehension or mutual understanding between people."),
+    DictionaryEntry("Naimbag a bigat",
+        "In Ilocano, Naimbag a bigat translates to Good morning in English. Naimbag means good, and bigat means morning. Therefore, the phrase is a polite and friendly way of greeting someone in the morning in the Ilocano language."),
     // Add more dictionary entries as needed
   ];
 
