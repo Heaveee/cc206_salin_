@@ -1,7 +1,5 @@
-import 'package:cc206_salin_/features/home.dart';
 import 'package:cc206_salin_/features/login.dart';
 import 'package:flutter/material.dart';
-import 'onboarding/onboarding.dart';
 
 void main() {
   runApp(MyApp());
