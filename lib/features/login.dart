@@ -7,12 +7,20 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+        body: Stack(children: [
+      // Background Image
+      Positioned.fill(
+        child: Image.asset(
+          'assets/fsfs.png', // Replace with your background image asset
+          fit: BoxFit.cover,
+        ),
+      ),
+      Center(
         child: Container(
           width: 375,
           height: 812,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.transparent, // Set background color to transparent
           ),
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           child: Column(
@@ -60,7 +68,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  //  login
+                  // login
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -158,6 +166,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ]));
   }
 }
