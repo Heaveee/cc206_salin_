@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cc206_salin_/features/login.dart';
 
 void main() {
   runApp(SignUpApp());
@@ -10,8 +11,7 @@ class SignUpApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.yellow,
-        colorScheme: ColorScheme.fromSwatch()
-            .copyWith(secondary: Colors.red), // Set accent color to red
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
       ),
       home: SignUpForm(),
     );
@@ -22,9 +22,6 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Salin"),
-      ),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(16.0),
@@ -32,7 +29,7 @@ class SignUpForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/salin_logo.png', // Replace with the actual path to your logo
+                'assets/salin_logo.png',
                 width: 100,
                 height: 100,
               ),
@@ -41,31 +38,107 @@ class SignUpForm extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 16.0),
-              TextField(
-                decoration: InputDecoration(labelText: "Username"),
+              Container(
+                width: 310,
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Username",
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
               ),
               SizedBox(height: 16.0),
-              TextField(
-                decoration: InputDecoration(labelText: "Email"),
+              Container(
+                width: 310,
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Email",
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
               ),
               SizedBox(height: 16.0),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(labelText: "Password"),
+              Container(
+                width: 310,
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
               ),
               SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.telegram, size: 30, color: Colors.blue),
+                    onPressed: () {
+                      // Handle Telegram sign-up
+                    },
+                  ),
+                  SizedBox(width: 20),
+                  IconButton(
+                    icon: Icon(Icons.facebook, size: 30, color: Colors.blue),
+                    onPressed: () {
+                      // Handle Facebook sign-up
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Text(
+                "or continue with",
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // if din makadto ang button
+                  // Handle sign-up
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Colors.red), // Set the button color to red
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
                 ),
-                child: Text("Sign Up",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 252, 252,
-                            252))), // Set the button text color to yellow
+                child: Text("Sign Up", style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
+                child: Text(
+                  "Already have an account? Sign in here.",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.blue,
+                  ),
+                ),
               ),
             ],
           ),
