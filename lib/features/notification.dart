@@ -17,7 +17,7 @@ class NotificationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5, // Replace with the actual number of notifications
+      itemCount: 10, // Replace with the actual number of notifications
       itemBuilder: (context, index) {
         return NotificationItem(
           title: "Notification ${index + 1}",
