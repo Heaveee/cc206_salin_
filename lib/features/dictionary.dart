@@ -8,11 +8,11 @@ class DictionaryScreen extends StatefulWidget {
 class _DictionaryScreenState extends State<DictionaryScreen> {
   TextEditingController _searchController = TextEditingController();
   List<DictionaryEntry> _allEntries = [
-    DictionaryEntry("Lakat",
+    DictionaryEntry("Lakat (Hiligaynon) ",
         "In Hiligaynon, which is spoken in the Western Visayas region of the Philippines, the word lakat generally means to walk or walking. It is a verb that describes the action of moving on foot."),
-    DictionaryEntry("Sabot",
+    DictionaryEntry("Sabot (Cebuano)",
         "In Cebuano, the word sabot means understand or agreement. It is commonly used to convey the idea of comprehension or mutual understanding between people."),
-    DictionaryEntry("Naimbag a bigat",
+    DictionaryEntry("Naimbag a bigat (Ilocano)",
         "In Ilocano, Naimbag a bigat translates to Good morning in English. Naimbag means good, and bigat means morning. Therefore, the phrase is a polite and friendly way of greeting someone in the morning in the Ilocano language."),
   ];
 
