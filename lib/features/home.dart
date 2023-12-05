@@ -115,7 +115,7 @@ class _HomeContentState extends State<HomeContent> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
-          16.0, 64.0, 16.0, 16.0), // Adjusted top padding
+          16.0, 150.0, 16.0, 16.0), // Adjusted top padding
       child: Column(
         mainAxisAlignment:
             MainAxisAlignment.start, // Adjusted to start from the top
@@ -128,19 +128,21 @@ class _HomeContentState extends State<HomeContent> {
             ),
           ),
           SizedBox(height: 16.0), // Adjusted spacing
-          DropdownButton<String>(
-            value: _selectedLanguage,
-            onChanged: (value) {
-              setState(() {
-                _selectedLanguage = value!;
-              });
-            },
-            items: _languages.map((language) {
-              return DropdownMenuItem(
-                value: language,
-                child: Text(language),
-              );
-            }).toList(),
+          Center(
+            child: DropdownButton<String>(
+              value: _selectedLanguage,
+              onChanged: (value) {
+                setState(() {
+                  _selectedLanguage = value!;
+                });
+              },
+              items: _languages.map((language) {
+                return DropdownMenuItem(
+                  value: language,
+                  child: Text(language),
+                );
+              }).toList(),
+            ),
           ),
           SizedBox(height: 16.0), // Adjusted spacing
           ElevatedButton(

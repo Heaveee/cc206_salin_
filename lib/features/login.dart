@@ -1,6 +1,7 @@
 import 'package:cc206_salin_/features/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:cc206_salin_/features/home.dart';
+import 'package:cc206_salin_/features/telgramloginscreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -102,11 +103,26 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    icon: Icon(Icons.telegram, size: 30, color: Colors.blue),
-                    onPressed: () {
-                      // Handle Google login
+                  GestureDetector(
+                    onTap: () {
+                      // Handle telegram login
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TelegramLoginScreen(),
+                        ),
+                      );
                     },
+                    child: IconButton(
+                      icon: Icon(Icons.telegram, size: 30, color: Colors.blue),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TelegramLoginScreen(),
+                            ));
+                      },
+                    ),
                   ),
                   SizedBox(width: 20),
                   IconButton(

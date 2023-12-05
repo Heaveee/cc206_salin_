@@ -40,7 +40,7 @@ class NotificationItem extends StatelessWidget {
       title: Text(title),
       subtitle: Text(time),
       onTap: () {
-        // Handle the tap on th            e notification item if needed
+        // Handle the tap on the notification item if needed
       },
     );
   }
