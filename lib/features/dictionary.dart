@@ -14,7 +14,6 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
         "In Cebuano, the word sabot means understand or agreement. It is commonly used to convey the idea of comprehension or mutual understanding between people."),
     DictionaryEntry("Naimbag a bigat",
         "In Ilocano, Naimbag a bigat translates to Good morning in English. Naimbag means good, and bigat means morning. Therefore, the phrase is a polite and friendly way of greeting someone in the morning in the Ilocano language."),
-    // Add more dictionary entries as needed
   ];
 
   List<DictionaryEntry> _filteredEntries = [];
