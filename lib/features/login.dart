@@ -9,10 +9,9 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/fsfs.png', // Replace with your background image asset
+              'assets/fsfs.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -21,8 +20,7 @@ class LoginScreen extends StatelessWidget {
               width: 375,
               height: 812,
               decoration: BoxDecoration(
-                color: Color.fromARGB(
-                    103, 174, 163, 163), // Set background color to transparent
+                color: Color.fromARGB(0, 174, 163, 163),
               ),
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
               child: Column(
@@ -39,7 +37,8 @@ class LoginScreen extends StatelessWidget {
                     width: 310,
                     height: 58,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius:
+                          BorderRadius.circular(10), // Added border radius
                       color: Colors.white,
                       border: Border.all(
                           width: 1.5, color: Color.fromARGB(255, 133, 32, 32)),
@@ -57,7 +56,8 @@ class LoginScreen extends StatelessWidget {
                     width: 310,
                     height: 58,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius:
+                          BorderRadius.circular(10), // Added border radius
                       color: Colors.white,
                       border: Border.all(
                           width: 1.5, color: Color.fromARGB(255, 157, 23, 23)),
@@ -92,7 +92,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
-                      // Handle forgot password
+                      // forgot password
                     },
                     child: Text(
                       "forgot password?",
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20), // Added space
                   Text(
                     "or continue with",
                     style: TextStyle(
@@ -118,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          // Handle telegram login
+                          // continue with Telegram
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -128,7 +128,8 @@ class LoginScreen extends StatelessWidget {
                         },
                         child: IconButton(
                           icon: Icon(Icons.telegram,
-                              size: 40, color: Colors.blue),
+                              size: 40,
+                              color: Colors.white), // Changed icon color
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -139,18 +140,20 @@ class LoginScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: 10), // Increased space
                       IconButton(
-                        icon:
-                            Icon(Icons.facebook, size: 40, color: Colors.blue),
+                        icon: Icon(Icons.facebook,
+                            size: 40,
+                            color: Colors.white), // Changed icon color
                         onPressed: () {
-                          // Handle Facebook login
+                          // continue with Facebook
                         },
                       ),
                     ],
                   ),
                   SizedBox(height: 20),
-                  Column(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Don’t have an account yet? ",
@@ -162,7 +165,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // pakadto to signup screen
+                          // Sign up
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -174,7 +177,7 @@ class LoginScreen extends StatelessWidget {
                           "Sign up here",
                           style: TextStyle(
                             fontSize: 14,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             color: Color.fromARGB(255, 255, 255, 255),
                           ),
                         ),

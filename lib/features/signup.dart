@@ -151,7 +151,7 @@ class SignUpForm extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 158, 27, 27),
                   ),
                 ),
               ),
