@@ -44,6 +44,11 @@ class SignUpForm extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white,
+                  border: Border.all(
+                    color: Color.fromARGB(
+                        255, 170, 33, 33), // Highlight color when focused
+                    width: 1.0,
+                  ),
                 ),
                 child: TextField(
                   decoration: InputDecoration(
@@ -60,6 +65,11 @@ class SignUpForm extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white,
+                  border: Border.all(
+                    color: Color.fromARGB(
+                        255, 148, 23, 23), // Highlight color when focused
+                    width: 1.0,
+                  ),
                 ),
                 child: TextField(
                   decoration: InputDecoration(
@@ -76,6 +86,11 @@ class SignUpForm extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white,
+                  border: Border.all(
+                    color: Color.fromARGB(
+                        255, 178, 34, 34), // Highlight color when focused
+                    width: 1.0,
+                  ),
                 ),
                 child: TextField(
                   obscureText: true,
@@ -86,7 +101,17 @@ class SignUpForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 20), // Move this space to adjust the layout
+              ElevatedButton(
+                onPressed: () {
+                  // Handle sign-up
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                ),
+                child: Text("Sign Up", style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -112,16 +137,6 @@ class SignUpForm extends StatelessWidget {
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
                 ),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle sign-up
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
-                ),
-                child: Text("Sign Up", style: TextStyle(color: Colors.white)),
               ),
               SizedBox(height: 20),
               GestureDetector(

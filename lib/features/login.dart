@@ -90,36 +90,27 @@ class LoginScreen extends StatelessWidget {
                     child: Text("Log In", style: TextStyle(fontSize: 18)),
                   ),
                   SizedBox(height: 20),
-                  Column(
-                    children: [
-                      Text(
-                        "Don’t have an account yet? ",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 255, 255, 255),
-                        ),
+                  GestureDetector(
+                    onTap: () {
+                      // Handle forgot password
+                    },
+                    child: Text(
+                      "forgot password?",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          // pakadto to signup screen
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignUpForm(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Sign up here",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    "or continue with",
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -159,27 +150,36 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20),
-                  Text(
-                    "or continue with",
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  GestureDetector(
-                    onTap: () {
-                      // Handle forgot password
-                    },
-                    child: Text(
-                      "forgot password?",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                  Column(
+                    children: [
+                      Text(
+                        "Don’t have an account yet? ",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
                       ),
-                    ),
+                      GestureDetector(
+                        onTap: () {
+                          // pakadto to signup screen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpForm(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Sign up here",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
